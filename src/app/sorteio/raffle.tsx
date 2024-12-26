@@ -74,7 +74,7 @@ export default function RafflePage() {
   );
 
   const divContents = [
-    <div>
+    <div key={"divContents1"}>
       <p className="text-white text-xl text-bold pb-2 text-center">
         Resultado dos Sorteios
       </p>
@@ -96,7 +96,7 @@ export default function RafflePage() {
         ) : null;
       })}
     </div>,
-    <div>
+    <div key={"divContents2"}>
       <p className="text-white text-xl text-bold pb-2 text-center">
         Ranking de Premiação
       </p>
@@ -172,7 +172,7 @@ export default function RafflePage() {
         })}
       </div>
     </div>,
-    <div>
+    <div key={"divContents3"}>
       <p className="text-white text-xl text-bold pb-2 text-center">
         Últimos Bilhetes Comprados
       </p>
