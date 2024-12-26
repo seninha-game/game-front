@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .expanded {
+    transition: width 1s ease;
+    width: 100%;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .fade-in {
+    animation: fadeIn 0.7s;
+  }
+  .fade-in-2 {
+    animation: fadeIn 0.9s;
+  }
+  .fade-in-fast {
+    animation: fadeIn 0.4s;
+  }
+}
+
+.ball {
+  background-color: #fcfcfc;
+  box-shadow: inset -8px -8px 16px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    -45deg,
+    rgba(211, 211, 211, 0.2) 0%,
+    transparent 100%
+  );
+}
+.ball::after {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.8) 14%,
+    rgba(255, 255, 255, 0) 24%
+  );
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+}
+
+@keyframes ballRoll {
+  0%,
+  20%,
+  50% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0) scale(1);
+  }
+  10%,
+  35%,
+  75% {
+    transform: translateY(100%) rotateX(170deg) scale(0.4);
+  }
+  11%,
+  36%,
+  76% {
+    transform: translateY(-100%) rotateX(-170deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@font-face {
+  font-family: "Tilting";
+  src: url("/public/fonts/big_noodle_titling_oblique.ttf") format("truetype");
+  font-weight: 700;
+  font-style: oblique;
+}
