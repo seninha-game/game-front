@@ -1,7 +1,7 @@
 "use client";
 
 import { seninhaApi } from "@/api/seninhaApi";
-import { prizesCommonInterface } from "@/interfaces/raffle";
+import { IPrizes } from "@/interfaces/raffle";
 import { CoringaIntegrationData, ITicket } from "@/interfaces/ticket";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -29,7 +29,7 @@ export const TicketMain = ({
   pageInformations,
 }: {
   ticketTypes: ITicket[];
-  prizes: prizesCommonInterface;
+  prizes: IPrizes;
   integrationData: CoringaIntegrationData;
   pageInformations: any;
 }) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { prizesCommonInterface } from "@/interfaces/raffle";
+import { IPrizes } from "@/interfaces/raffle";
 import { CoringaIntegrationData, ITicket } from "@/interfaces/ticket";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { HiOutlineTrophy } from "react-icons/hi2";
@@ -17,7 +17,7 @@ export const InformationChangePage = ({
   currentRaffle,
 }: {
   ticketTypes: ITicket[];
-  prizes: prizesCommonInterface;
+  prizes: IPrizes;
   selectedPage: "bet" | "info";
   integrationData: CoringaIntegrationData;
   currentRaffle: any;
@@ -53,7 +53,7 @@ const CardSection = ({
   selectedPage,
   currentRaffle,
 }: {
-  prizes: prizesCommonInterface;
+  prizes: IPrizes;
   selectedPage: "bet" | "info";
   currentRaffle: any;
 }) => {
