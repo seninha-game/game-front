@@ -244,7 +244,7 @@ export default function RafflePage() {
   };
 
   useEffect(() => {
-    const es = new EventSource(`${seninhaApi.getUri()}/events`);
+    const es = new EventSource(`${seninhaApi.getUri()}events`);
     es.onopen = () => console.log(">>> Connection opened!");
     es.onerror = (e) => console.log("ERROR!", e);
     es.onmessage = (e) => {

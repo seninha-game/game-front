@@ -31,7 +31,7 @@ export async function middleware(request: NextRequest) {
   } else if (authCookie && userIdCookie) {
     return NextResponse.next();
   } else {
-    return NextResponse.redirect(new URL("/bilhetes", request.url));
+    return NextResponse.redirect(new URL("https://coringagames.com", request.url));
   }
 }
 
