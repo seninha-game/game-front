@@ -7,6 +7,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ScrollTopButton } from "../buttonScrollTop/ScrollTopButton";
 import { InformationChangePage } from "./InformationChangePage";
+require("dotenv").config();
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const getLastResults = async (): Promise<any> => {
   //todo typagem
@@ -38,7 +41,7 @@ export const TicketMain = ({
   const [currentPrizes, setCurrentPrizes] = useState<any>({});
   const [currentRaffle, setCurrentRaffle] = useState<any>({});
   useEffect(() => {
-    const es = new EventSource("http://localhost:8080/events");
+    const es = new EventSource(`${BASE_URL}/events`);
     es.onopen = () => console.log(">>> Connection opened!");
     es.onerror = (e) => console.log("ERROR!", e);
     es.onmessage = (e) => {
