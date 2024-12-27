@@ -38,7 +38,7 @@ export const TicketMain = ({
   const [currentPrizes, setCurrentPrizes] = useState<any>({});
   const [currentRaffle, setCurrentRaffle] = useState<any>({});
   useEffect(() => {
-    const es = new EventSource(`${seninhaApi.getUri()}/events`);
+    const es = new EventSource(`${seninhaApi.getUri()}events`);
     es.onopen = () => console.log(">>> Connection opened!");
     es.onerror = (e) => console.log("ERROR!", e);
     es.onmessage = (e) => {
